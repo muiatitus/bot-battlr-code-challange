@@ -1,6 +1,6 @@
 # Bot Battlr
 
-Welcome to Bot Battlr, the one and only spot in the known universe where you can custom build your own Bot Army! This is our app:
+Welcome to the Bot Battlr Code Challenge! This is a React web application that allows you to browse through a list of robots, view a robot's details, and enlist bots into your army. The project is developed as part of the code challenge for the Bot Battlr game.
 
 ## Table of Contents
 
