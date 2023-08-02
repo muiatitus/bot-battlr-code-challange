@@ -9,7 +9,6 @@ function BotCollection() {
   const [bots, setBots] = useState([]);
   const [filteredBots, setFilteredBots] = useState([]);
   const [enlistedBots, setEnlistedBots] = useState([]);
-  const [sortCriteria, setSortCriteria] = useState(null);
 
   useEffect(() => {
     // Fetch data from the local server using Axios (or any other method)
@@ -34,7 +33,6 @@ function BotCollection() {
   };
 
   const handleSort = (criteria) => {
-    setSortCriteria(criteria);
     if (criteria === null) {
       setFilteredBots(bots); // Reset to the original order
     } else {
