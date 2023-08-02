@@ -1,9 +1,12 @@
+//BotCard.js
+
 import React from 'react';
 
 function BotCard({ bot, onEnlist }) {
     const handleEnlistClick = () => {
-      onEnlist(bot); // Call the onEnlist function from props and pass the bot as an argument
-    };
+        onEnlist(bot); // Call the onEnlist function from props and pass the bot as an argument
+      };
+      
   
     return (
       <div className="bot-card">
@@ -14,9 +17,9 @@ function BotCard({ bot, onEnlist }) {
         <p>Armor: {bot.armor}</p>
         <p>Class: {bot.bot_class}</p>
         <button onClick={handleEnlistClick}>Enlist</button> {/* Call handleEnlistClick */}
-      </div>
-    );
-  }
+    </div>
+  );
+}
   
 
 export default BotCard;

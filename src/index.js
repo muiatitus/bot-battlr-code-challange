@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './App.css'; // Optional - If you have a separate CSS file for styling
+import './styles.css'; // Optional - If you have a separate CSS file for styling
 
 
 

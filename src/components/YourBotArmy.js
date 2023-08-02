@@ -1,33 +1,30 @@
-import React, { useState } from 'react';
-import BotCard from './BotCard';
+// YourBotArmy.js
 
-function YourBotArmy() {
-  const [enlistedBots, setEnlistedBots] = useState([]);
+import React from 'react';
 
-  const enlistBot = (bot) => {
-    // Check if the bot is not already enlisted
-    if (!enlistedBots.includes(bot)) {
-      setEnlistedBots([...enlistedBots, bot]);
-    }
-  };
+function YourBotArmy({ enlistedBots, onRelease }) {
+  const reverseEnlistedBots = [...enlistedBots].reverse();
 
-  const releaseBot = (bot) => {
-    setEnlistedBots(enlistedBots.filter((enlistedBot) => enlistedBot !== bot));
-  };
+  console.log('Enlisted Bots:', enlistedBots); // Check the enlistedBots prop
+  console.log('Reverse Enlisted Bots:', reverseEnlistedBots); // Check the reverseEnlistedBots variable
 
   return (
     <div>
-      <h1>Your Bot Army</h1>
-      <div className="bot-army">
-        {enlistedBots.map((bot) => (
-          <div key={bot.id}>
-            <BotCard bot={bot} />
-            <button onClick={() => releaseBot(bot)}>Release</button>
+      <h2>Your Bot Army</h2>
+      <div className="bot-list">
+        {reverseEnlistedBots.map((bot) => (
+          <div className="bot-card" key={bot.id}>
+            <img src={bot.avatar_url} alt={bot.name} />
+            <h2>{bot.name}</h2>
+            <p>Health: {bot.health}</p>
+            <p>Damage: {bot.damage}</p>
+            <p>Armor: {bot.armor}</p>
+            <button onClick={() => onRelease(bot)}>Release</button>
+
           </div>
         ))}
       </div>
     </div>
   );
 }
-
 export default YourBotArmy;
